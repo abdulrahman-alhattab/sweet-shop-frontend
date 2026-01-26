@@ -10,12 +10,13 @@ const SignUpForm = () => {
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     username: '',
+    email: '',
     password: '',
     passwordConf: ''
   })
   const { setUser } = useContext(UserContext)
 
-  const { username, password, passwordConf } = formData
+  const { username, email, password, passwordConf } = formData
 
   const handleChange = (evt) => {
     setMessage('')
@@ -24,13 +25,15 @@ const SignUpForm = () => {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault()
-    const user = await authService.signUp(formData)
+    const payload = { ...formData }
+    delete payload.passwordConf
+    const user = await authService.signUp(payload)
     setUser(user) // this line will print the form data to the console
     navigate('/')
   }
 
   const isFormInvalid = () => {
-    return !(username && password && password === passwordConf)
+    return !(username && email && password && password === passwordConf)
   }
 
   return (
@@ -48,6 +51,19 @@ const SignUpForm = () => {
             name="username"
             onChange={handleChange}
             placeholder="Enter your username"
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="username">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            name="email"
+            onChange={handleChange}
+            placeholder="Enter your email"
             required
           />
         </div>
