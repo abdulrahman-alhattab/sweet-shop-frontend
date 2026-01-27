@@ -10,6 +10,7 @@ import DrinkList from './components/Drink/Drinklist/DrinkList'
 import NotDrinkList from './components/Drink/Drinklist/NotDrinkList'
 import DrinkDetail from './components/Drink/DrinkDetail/DrinkDetail'
 import DrinkForm from './components/Drink/CreateDrinkForm/CreateDrinkForm'
+import EditDrink from './components/Drink/EditDrinkForm/EditDrinkForm'
 import { UserContext } from './contexts/UserContext'
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/notDrinkList" element={<NotDrinkList />} />
         <Route path="/drinkList/:id" element={<DrinkDetail />} />
         <Route path="/drinkList/create" element={<DrinkForm />} />
+        <Route path="/drinkList/:id/edit" element={<EditDrink />} />
       </Routes>
     </>
   )

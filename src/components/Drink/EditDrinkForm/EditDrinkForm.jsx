@@ -2,11 +2,12 @@ import { useState, useContext } from 'react'
 import * as drinkService from '../../../services/drinkService.js'
 import { useNavigate, Navigate, Link } from 'react-router'
 import { UserContext } from '../../../contexts/UserContext'
+import { useParams } from 'react-router'
 import styles from './EditDrinkForm.module.css'
 
 const EditDrink = () => {
   const navigate = useNavigate()
-  const { user } = useContext(UserContext)
+  const { id } = useContext(UserContext)
   const [formState, setFormState] = useState({
     name: '',
     inStock: '',
@@ -17,9 +18,10 @@ const EditDrink = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (evt) => {
-    const { name, value } = evt.target
-    const newFormData = { ...formState, [name]: value }
-    setFormState(newFormData)
+    const { name, value, type, checked } = evt.target
+    const finalValue = type === 'checkbox' ? checked : value
+
+    setFormState({ ...formState, [name]: finalValue })
   }
   const handleSubmit = async (evt) => {
     evt.preventDefault()
@@ -30,7 +32,7 @@ const EditDrink = () => {
       const payload = { ...formState }
       payload.price = Number(payload.rating)
 
-      const updatedProduct = await productService.update(id, payload)
+      const updatedDrink = await drinkService.update(id, payload)
 
       setMessage('drink created successfully!')
       navigate('/drinkList')
@@ -83,7 +85,7 @@ const EditDrink = () => {
       <br />
       <button type="submit" className={styles.submitButton}>
         <span>✓</span>
-        Edit Product
+        Edit Drink
       </button>
     </form>
   )

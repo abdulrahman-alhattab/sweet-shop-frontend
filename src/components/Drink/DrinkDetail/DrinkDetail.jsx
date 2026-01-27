@@ -47,7 +47,7 @@ function DrinkDetail() {
           drink.reviews.map((r) => <li key={r.id}>{r.content}</li>)}
       </ul>
 
-      <Link to={`/drinks/${id}/edit`}>Edit Drink</Link>
+      <Link to={`/drinkList/${id}/edit`}>Edit Drink</Link>
       <button onClick={handleDelete}>Delete Drink</button>
     </div>
   )
