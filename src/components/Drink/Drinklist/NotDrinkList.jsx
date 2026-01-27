@@ -4,7 +4,7 @@ import { UserContext } from '../../../contexts/UserContext'
 import * as drinkService from '../../../services/drinkService.js'
 import styles from './DrinkList.module.css'
 
-const DrinkList = () => {
+const NotDrinkList = () => {
   const { user } = useContext(UserContext)
   const [drinks, setDrinks] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
@@ -38,31 +38,16 @@ const DrinkList = () => {
     getAllDrinks(query)
   }, [searchParams])
 
-  if (!drinks?.length) <h1>Loading...</h1>
+  if (!drinks.length) <h1>Loading...</h1>
 
   return (
     <div>
-      <h1>Drink List</h1>
-      <Link to="/drinkList/create">Create Drink</Link>
-      {drinks.map((oneDrink) => {
-        // const stockStatus = getStockStatus(oneDrink.stock)
-        // const price = formatPrice(oneDrink.price || 0)
-
-        return (
-          <div>
-            <Link to={`/drinkList/${oneDrink.id}`}>
-              <li>
-                <p>name: {oneDrink.name} </p>
-                <p>Rating: {oneDrink.rating}</p>
-                <p>inStock: in progress...</p>
-              </li>
-              <li></li>
-            </Link>
-          </div>
-        )
-      })}
+      <h1>List?? go away this is halal place</h1>
+      <h2>your Help!/SoS privileges has been taken away</h2>
+      <li></li>
+      <h4>tracing location...</h4>
     </div>
   )
 }
 
-export default DrinkList
+export default NotDrinkList

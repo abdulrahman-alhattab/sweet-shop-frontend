@@ -1,12 +1,24 @@
 import axios from 'axios'
 import { authHeaders } from './authService'
 
-const BASE_URL = `${import.meta.VITE_API_URL}/drinks`
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/drinks`
+
+console.log(BASE_URL)
+const index = async (query) => {
+  try {
+    const url = query ? `${BASE_URL}?q=${query}` : BASE_URL
+    const response = await axios.get(url)
+    console.log('response')
+    return response.data
+  } catch (err) {
+    console.log(err)
+  }
+}
 
 const show = async (id) => {
   try {
     const response = await axios.get(`${BASE_URL}/${id}`, authHeaders())
-    return response.data.drink
+    return response.data
   } catch (err) {
     console.log(err)
   }
@@ -29,7 +41,7 @@ const update = async (drinkId, formData) => {
       formData,
       authHeaders()
     )
-    return response.data.drink
+    return response.data
   } catch (error) {
     console.error(error)
   }
@@ -38,10 +50,10 @@ const update = async (drinkId, formData) => {
 const deleteOne = async (drinkId) => {
   try {
     const response = await axios.delete(`${BASE_URL}/${drinkId}`, authHeaders)
-    return response.data.drink
+    return response.data
   } catch (error) {
     console.error(error)
   }
 }
 
-export { show, create, update, deleteOne }
+export { index, show, create, update, deleteOne }
