@@ -2,9 +2,9 @@ import { useState, useContext } from 'react'
 import * as drinkService from '../../../services/drinkService.js'
 import { useNavigate, Navigate, Link } from 'react-router'
 import { UserContext } from '../../../contexts/UserContext'
-import styles from './CreateDrinkForm.module.css'
+import styles from './EditDrinkForm.module.css'
 
-const DrinkForm = () => {
+const EditDrink = () => {
   const navigate = useNavigate()
   const { user } = useContext(UserContext)
   const [formState, setFormState] = useState({
@@ -29,7 +29,8 @@ const DrinkForm = () => {
     try {
       const payload = { ...formState }
       payload.price = Number(payload.rating)
-      const newDrink = await drinkService.create(payload)
+
+      const updatedProduct = await productService.update(id, payload)
 
       setMessage('drink created successfully!')
       navigate('/drinkList')
@@ -82,10 +83,10 @@ const DrinkForm = () => {
       <br />
       <button type="submit" className={styles.submitButton}>
         <span>✓</span>
-        Create Product
+        Edit Product
       </button>
     </form>
   )
 }
 
-export default DrinkForm
+export default EditDrink
