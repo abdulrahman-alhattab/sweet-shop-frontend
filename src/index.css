@@ -1,68 +1,52 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+#NavBar {
+  flex-direction: row;
+  justify-content: center;
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  max-width: 1000px;
+  padding: 0 1rem;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  margin: 0 auto;
+  text-shadow: 2px 2px 2px #fff0f0;
+  .myButton {
+    color: rgb(255, 246, 243);
+    font-size: 18px;
+    line-height: 18px;
+    padding: 8px;
+    border-radius: 12px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(
+      to right,
+      rgb(28, 110, 164) 0%,
+      rgb(35, 136, 203) 45%,
+      rgb(20, 78, 117) 100%
+    );
+    box-shadow: rgb(0, 0, 0) -40px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
   }
-  a:hover {
-    color: #747bff;
+  .myButton:hover {
+    background: #1c6ea4;
   }
-  button {
-    background-color: #f9f9f9;
+  .myButton:active {
+    background: #144e75;
   }
 }

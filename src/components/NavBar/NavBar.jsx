@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { Link } from 'react-router'
+import './NavBar.css'
 
 import { UserContext } from '../../contexts/UserContext'
 
@@ -15,38 +16,38 @@ const NavBar = () => {
   // {username, sub} if logged in or null if not, and shows
   // set of the correct set of links
   return (
-    <nav>
+    <nav id="NavBar">
       {user ? (
-        <ul>
-          <li>Welcome, {user.username}</li>
-          <li>
+        <div>
+          <p className="navWelcome">Welcome, {user.username}</p>
+          <button className="nav-link">
             <Link to="/">Dashboard</Link>
-          </li>
-          <li>
+          </button>
+          <button className="nav-link">
             {' '}
             <Link to="/DrinkList">halal Drinks</Link>
-          </li>
-          <li>
+          </button>
+          <button className="nav-link">
             <Link to="/NotDrinkList">Not halal Drinks</Link>
-          </li>
-          <li>
+          </button>
+          <button className="nav-link">
             <Link to="/" onClick={handleSignOut}>
               Sign Out
             </Link>
-          </li>
-        </ul>
+          </button>
+        </div>
       ) : (
         <ul>
-          <li>
+          <p>
             <Link to="/">Home</Link>
-          </li>
-          <li>
+          </p>
+          <p>
             <Link to="/sign-in">Sign In</Link>
-          </li>
-          <li>
+          </p>
+          <p>
             <Link to="/sign-up">Sign Up</Link>
-          </li>
-          <li></li>
+          </p>
+          <p></p>
         </ul>
       )}
     </nav>

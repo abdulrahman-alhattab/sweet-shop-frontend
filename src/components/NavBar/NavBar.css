@@ -1,0 +1,25 @@
+.nav-link {
+  display: inline;
+  padding: 8px;
+  border-radius: 12px;
+  size: 18px;
+  margin: 0 5px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: row;
+  text-shadow: 2px 2px 2px #521869;
+  background: #601ca4;
+  background: -moz-linear-gradient(left, #5b1ca4 0%, #7123cb 45%, #411475 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #571ca4 0%,
+    hsl(272, 71%, 47%) 45%,
+    #531276 100%
+  );
+  background: linear-gradient(to right, #701ca4 0%, #8823cb 45%, #581475 100%);
+  background-color: rgb(156, 69, 227);
+  color: rgb(255, 227, 227);
+}
