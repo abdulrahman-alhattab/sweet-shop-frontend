@@ -43,24 +43,27 @@ const DrinkList = () => {
   return (
     <div>
       <h1>Drink List</h1>
-      <Link to="/drinkList/create">Create Drink</Link>
-      {drinks.map((oneDrink) => {
-        // const stockStatus = getStockStatus(oneDrink.stock)
-        // const price = formatPrice(oneDrink.price || 0)
+      <Link to="/drinkList/create">
+        <button>Create Drink</button>
+      </Link>
+      <div className={styles.container}>
+        {drinks.map((oneDrink) => {
+          // const stockStatus = getStockStatus(oneDrink.stock)
+          // const price = formatPrice(oneDrink.price || 0)
 
-        return (
-          <div className={styles.container}>
-            <Link to={`/drinkList/${oneDrink.id}`}>
-              <li className={styles.container}>
-                <p>name: {oneDrink.name} </p>
-                <p>Rating: {oneDrink.rating}</p>
-                <p>inStock: in progress...</p>
-              </li>
-              <li></li>
-            </Link>
-          </div>
-        )
-      })}
+          return (
+            <div className={styles.card}>
+              <Link to={`/drinkList/${oneDrink.id}`}>
+                <div className={styles.container}>
+                  <p>name: {oneDrink.name} </p>
+                  <p>Rating: {oneDrink.rating}</p>
+                  <p>inStock: in progress...</p>
+                </div>
+              </Link>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

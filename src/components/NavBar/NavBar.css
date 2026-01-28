@@ -53,12 +53,17 @@
 
 .navCon {
   background-color: #8735a7;
-  padding: 4px;
+  padding: 2px;
+  padding-left: 2px;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
+  box-shadow: #9b33c5 0px 0px 5px 0px;
 }
 
 .navWelcome {
+  text-align: center;
+
+  size: 30px;
+  text-size-adjust: 24px;
   color: white;
 }
