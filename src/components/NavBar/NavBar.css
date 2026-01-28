@@ -1,25 +1,64 @@
 .nav-link {
-  display: inline;
   padding: 8px;
   border-radius: 12px;
-  size: 18px;
+  size: 30px;
   margin: 0 5px;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  flex-direction: row;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  box-shadow: #9b33c5 0px 1px 10px 1px;
+
+  /* flex-direction: row; */
+  display: flex;
+  align-items: center;
   text-shadow: 2px 2px 2px #521869;
   background: #601ca4;
   background: -moz-linear-gradient(left, #5b1ca4 0%, #7123cb 45%, #411475 100%);
+
   background: -webkit-linear-gradient(
     left,
     #571ca4 0%,
     hsl(272, 71%, 47%) 45%,
     #531276 100%
   );
+
   background: linear-gradient(to right, #701ca4 0%, #8823cb 45%, #581475 100%);
   background-color: rgb(156, 69, 227);
+  /* color: rgb(255, 227, 227); */
+  color: white;
+}
+
+.nav-link .link {
+  color: white;
+}
+.nav-link:hover {
+  text-shadow: 2px 2px 2px #6e3685;
+  background: #a444d4;
+  background: -moz-linear-gradient(left, #9833bd 0%, #aa41db 45%, #742497 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #8e29b9 0%,
+    hsl(283, 75%, 55%) 45%,
+    #6d2394 100%
+  );
+
+  background: linear-gradient(to right, #a030c2 0%, #9e3be1 45%, #892eb0 100%);
+  background-color: rgb(159, 67, 206);
   color: rgb(255, 227, 227);
+}
+.nav-link:active {
+  background: #461475;
+}
+
+.navCon {
+  background-color: #8735a7;
+  padding: 4px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.navWelcome {
+  color: white;
 }

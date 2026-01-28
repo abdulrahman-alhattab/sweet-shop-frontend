@@ -18,20 +18,26 @@ const NavBar = () => {
   return (
     <nav id="NavBar">
       {user ? (
-        <div>
+        <div className="navCon">
           <p className="navWelcome">Welcome, {user.username}</p>
           <button className="nav-link">
-            <Link to="/">Dashboard</Link>
+            <Link className="link" to="/">
+              Dashboard
+            </Link>
           </button>
           <button className="nav-link">
             {' '}
-            <Link to="/DrinkList">halal Drinks</Link>
+            <Link className="link" to="/DrinkList">
+              halal Drinks
+            </Link>
           </button>
           <button className="nav-link">
-            <Link to="/NotDrinkList">Not halal Drinks</Link>
+            <Link className="link" to="/NotDrinkList">
+              Not halal Drinks
+            </Link>
           </button>
           <button className="nav-link">
-            <Link to="/" onClick={handleSignOut}>
+            <Link className="link" to="/" onClick={handleSignOut}>
               Sign Out
             </Link>
           </button>
@@ -39,13 +45,19 @@ const NavBar = () => {
       ) : (
         <ul>
           <p>
-            <Link to="/">Home</Link>
+            <Link className="link" to="/">
+              Home
+            </Link>
           </p>
           <p>
-            <Link to="/sign-in">Sign In</Link>
+            <Link className="link" to="/sign-in">
+              Sign In
+            </Link>
           </p>
           <p>
-            <Link to="/sign-up">Sign Up</Link>
+            <Link className="link" to="/sign-up">
+              Sign Up
+            </Link>
           </p>
           <p></p>
         </ul>

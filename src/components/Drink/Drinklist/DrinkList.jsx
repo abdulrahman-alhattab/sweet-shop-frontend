@@ -49,9 +49,9 @@ const DrinkList = () => {
         // const price = formatPrice(oneDrink.price || 0)
 
         return (
-          <div>
+          <div className={styles.container}>
             <Link to={`/drinkList/${oneDrink.id}`}>
-              <li>
+              <li className={styles.container}>
                 <p>name: {oneDrink.name} </p>
                 <p>Rating: {oneDrink.rating}</p>
                 <p>inStock: in progress...</p>

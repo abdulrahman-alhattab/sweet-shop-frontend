@@ -1,6 +1,12 @@
 #NavBar {
   flex-direction: row;
+  padding: 8px;
+  border-radius: 12px;
+  size: 30px;
+  margin: 0 5px;
+  /* display: flex;
   justify-content: center;
+  align-items: center; */
 }
 
 body {
@@ -21,32 +27,4 @@ body {
   text-transform: none;
   margin: 0 auto;
   text-shadow: 2px 2px 2px #fff0f0;
-  .myButton {
-    color: rgb(255, 246, 243);
-    font-size: 18px;
-    line-height: 18px;
-    padding: 8px;
-    border-radius: 12px;
-    font-family: Georgia, serif;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background-image: linear-gradient(
-      to right,
-      rgb(28, 110, 164) 0%,
-      rgb(35, 136, 203) 45%,
-      rgb(20, 78, 117) 100%
-    );
-    box-shadow: rgb(0, 0, 0) -40px 5px 15px 5px;
-    border: 2px solid rgb(28, 110, 164);
-    display: inline-block;
-  }
-  .myButton:hover {
-    background: #1c6ea4;
-  }
-  .myButton:active {
-    background: #144e75;
-  }
 }
