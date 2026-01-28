@@ -24,7 +24,7 @@ function DrinkDetail() {
   const handleDelete = async () => {
     const deletedDrink = await drinkService.deleteOne(id)
     if (deletedDrink) {
-      navigate('/')
+      navigate('/drinkList')
     } else {
       console.error('something went wrong')
     }

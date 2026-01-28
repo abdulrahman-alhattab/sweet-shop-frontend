@@ -49,7 +49,7 @@ const update = async (drinkId, formData) => {
 
 const deleteOne = async (drinkId) => {
   try {
-    const response = await axios.delete(`${BASE_URL}/${drinkId}`, authHeaders)
+    const response = await axios.delete(`${BASE_URL}/${drinkId}`, authHeaders())
     return response.data
   } catch (error) {
     console.error(error)
