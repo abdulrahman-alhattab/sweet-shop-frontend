@@ -5,10 +5,9 @@ import { UserContext } from '../../../contexts/UserContext.jsx'
 import './DrinkDetail.css'
 
 function DrinkDetail() {
-  const [drink, setDrink] = useState({})
+  const [drink, setDrink] = useState(null)
   const { id } = useParams()
   const navigate = useNavigate()
-  const { user, setUser } = useContext(UserContext)
 
   useEffect(() => {
     const getOneDrink = async (id) => {
@@ -32,6 +31,8 @@ function DrinkDetail() {
   }
 
   if (!id) return <h1>Loading ...</h1>
+  if (!drink) return <h1>Loading ...</h1>
+
   return (
     <div>
       <Link to="/">Home</Link>

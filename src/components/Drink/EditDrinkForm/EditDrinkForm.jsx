@@ -1,21 +1,28 @@
-import { useState, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import * as drinkService from '../../../services/drinkService.js'
-import { useNavigate, Navigate, Link } from 'react-router'
-import { UserContext } from '../../../contexts/UserContext'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import styles from './EditDrinkForm.module.css'
 
 const EditDrink = () => {
+  const { id } = useParams()
   const navigate = useNavigate()
-  const { id } = useContext(UserContext)
-  const [formState, setFormState] = useState({
-    name: '',
-    inStock: '',
-    rating: 0
-  })
+  const [formState, setFormState] = useState(null)
 
   const [message, setMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  useEffect(() => {
+    const getOneDrink = async (id) => {
+      try {
+        const data = await drinkService.show(id)
+        setFormState(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
+    if (id) getOneDrink(id)
+  }, [id])
 
   const handleChange = (evt) => {
     const { name, value, type, checked } = evt.target
@@ -43,6 +50,8 @@ const EditDrink = () => {
       )
     }
   }
+
+  if (!formState) return <h1>Loading...</h1>
 
   return (
     <form onSubmit={handleSubmit}>
