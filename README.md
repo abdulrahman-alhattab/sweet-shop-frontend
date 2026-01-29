@@ -5,6 +5,7 @@ A React + Vite frontend template for JWT authentication with a FastAPI backend.
 ## Setup
 
 1. Clone and remove git history:
+
 ```bash
 git clone <repository-url> my-project
 cd my-project
@@ -12,27 +13,32 @@ rm -rf .git
 ```
 
 2. Initialize a new git repository:
+
 ```bash
 git init
 ```
 
 3. Install dependencies:
+
 ```bash
 npm install
 ```
 
 4. Create your `.env` file:
+
 ```bash
 VITE_BACK_END_SERVER_URL=http://localhost:8000/api
 ```
 
 5. Make your first commit:
+
 ```bash
 git add .
 git commit -m "Initial commit"
 ```
 
 6. Create a new repository on GitHub, then push:
+
 ```bash
 git remote add origin <your-new-repo-url>
 git branch -M main
@@ -53,3 +59,15 @@ The app will run at `http://localhost:5173` by default.
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
+
+# Welcome to the sweets Shop
+
+1. Drink Management: View, add, and manage a curated list of drinks via a single unified model.
+2. Responsive UI: A clean, component-based interface built with React.
+3. RESTful API: A simple Python-based backend providing efficient data access.
+
+# Tech Stack
+
+1. Frontend: React
+2. Backend: Python with fast api
+3. Model: Single entity (Drink) handling name, Rating , inStock ,and review.
